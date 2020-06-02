@@ -66,4 +66,17 @@ class ProdukController extends Controller
         return response()->json($produk);
 
     }
+
+    public function destroy($id){
+
+        $produk = Produk::find($id);
+
+        if(!$produk){
+            return response()->json(['message' => 'Produk Not Found!'], 404);
+        };
+
+        $produk->delete();
+
+        return response()->json(['message' => 'Produk Deleted!']);
+    }
 }
