@@ -10,15 +10,19 @@ class ProdukController extends Controller
 {
 
     public function index(){
+
         $produk = Produk::all();
 
         return response()->json($produk);
+
     }
 
     public function show($id){
+
         $produk = Produk::find($id);
 
         return response()->json($produk);
+
     }
 
     public function create(Request $request){
@@ -35,5 +39,31 @@ class ProdukController extends Controller
         $produk = Produk::create($data);
 
         return response()->json($produk);
+
+    }
+
+    public function update(Request $request, $id){
+
+        $produk = Produk::find($id);
+
+        if(!$produk){
+            return response()->json(['message' => 'Produk Not Found!'], 404);
+        };
+
+        $data = $request->all();
+
+        $this->validate($request, [
+            'nama' => 'string',
+            'harga' => 'integer',
+            'warna' => 'string',
+            'kondisi' => 'in:baru,lama',
+            'deskripsi' => 'string'
+        ]);
+
+        $produk->fill($data);
+        $produk->save();
+
+        return response()->json($produk);
+
     }
 }
