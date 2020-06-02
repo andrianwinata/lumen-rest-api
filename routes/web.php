@@ -19,6 +19,7 @@ $router->get('/produk/{id}', 'ProdukController@show');
 $router->put('/produk/{id}', 'ProdukController@update');
 $router->delete('/produk/{id}', 'ProdukController@destroy');
 
-// Register
+// Register And Login
 
 $router->post('/register', 'UserController@register');
+$router->post('/login', 'UserController@login');
