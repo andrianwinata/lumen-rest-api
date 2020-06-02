@@ -18,7 +18,7 @@ class CreateProdukTable extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->string('warna');
-            $table->enum('kondidi',['baru','lama']);
+            $table->enum('kondisi',['baru','lama']);
             $table->longText('deskripsi')->nullable();
             $table->timestamps();
         });
