@@ -9,4 +9,4 @@ Laravel Lumen is a stunningly fast PHP micro-framework for building web applicat
 
 ## Serving Your Application
 
-php -S localhost:8000 -t public
+```php -S localhost:8000 -t public
