@@ -1,3 +1,5 @@
+![banner](https://live.staticflickr.com/8775/16989608218_18f0069e76.jpg)
+
 # Lumen RestAPI
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
